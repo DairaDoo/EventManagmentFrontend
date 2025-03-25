@@ -1,0 +1,32 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main  # O la rama principal de tu repositorio
+  pull_request:
+    branches:
+      - Dairan  # O la rama principal de tu repositorio
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  # El sistema operativo sobre el que correrá el trabajo (puedes cambiarlo si lo necesitas)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Este paso permite a GitHub Actions acceder al código de tu repositorio
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.16.0'  # O la versión que estés usando en tu proyecto
+
+      - name: Install dependencies
+        run: npm install  # Instala las dependencias de tu proyecto
+
+      - name: Run ESLint
+        run: npm run lint  # Ejecuta el linter, asumiendo que tienes un script 'lint' configurado en package.json
+
+      - name: Run tests
+        run: npm run test  # Ejecuta tus pruebas unitarias, si tienes configuradas pruebas en tu proyecto
+
