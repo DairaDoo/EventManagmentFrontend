@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3  # Este paso permite a GitHub Actions acceder al código de tu repositorio
+        with:
+          submodules: true
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
