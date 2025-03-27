@@ -29,6 +29,6 @@ jobs:
       - name: Run ESLint
         run: npm run lint  # Ejecuta el linter, asumiendo que tienes un script 'lint' configurado en package.json
 
-      - name: Run tests
-        run: npm run test  # Ejecuta tus pruebas unitarias, si tienes configuradas pruebas en tu proyecto
+      - name: Run tests (if present)
+        run: npm run test --if-present # Ejecuta tus pruebas unitarias, si tienes configuradas pruebas en tu proyecto
 
