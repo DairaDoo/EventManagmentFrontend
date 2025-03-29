@@ -1,3 +1,155 @@
 @use '@angular/material' as mat;
 
 @include mat.core();
+
+// Custom color palette
+$event-palette: (
+  light-beige: #F2EFE7,
+  soft-blue: #9ACBD0,
+  teal: #48A6A7,
+  deep-teal: #006A71,
+);
+
+// Define the color variables
+$light-beige: map-get($event-palette, light-beige);
+$soft-blue: map-get($event-palette, soft-blue);
+$teal: map-get($event-palette, teal);
+$deep-teal: map-get($event-palette, deep-teal);
+
+// Define the primary palette
+$primary-palette: (
+  50: lighten($deep-teal, 45%),
+  100: lighten($deep-teal, 40%),
+  200: lighten($deep-teal, 30%),
+  300: lighten($deep-teal, 20%),
+  400: lighten($deep-teal, 10%),
+  500: $deep-teal,
+  600: darken($deep-teal, 10%),
+  700: darken($deep-teal, 20%),
+  800: darken($deep-teal, 30%),
+  900: darken($deep-teal, 40%),
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// Define the accent palette
+$accent-palette: (
+  50: lighten($soft-blue, 30%),
+  100: lighten($soft-blue, 25%),
+  200: lighten($soft-blue, 20%),
+  300: lighten($soft-blue, 15%),
+  400: lighten($soft-blue, 5%),
+  500: $soft-blue,
+  600: darken($soft-blue, 5%),
+  700: darken($soft-blue, 10%),
+  800: darken($soft-blue, 15%),
+  900: darken($soft-blue, 20%),
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// Define the warn palette
+$warn-palette: mat.$red-palette;
+
+// Create the theme
+$primary: mat.define-palette($primary-palette);
+$accent: mat.define-palette($accent-palette);
+$warn: mat.define-palette($warn-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($theme);
+
+// Utility classes for colors
+.light-beige-bg {
+  background-color: $light-beige !important;
+}
+
+.light-beige-text {
+  color: $light-beige !important;
+}
+
+.soft-blue-bg {
+  background-color: $soft-blue !important;
+}
+
+.soft-blue-text {
+  color: $soft-blue !important;
+}
+
+.teal-bg {
+  background-color: $teal !important;
+}
+
+.teal-text {
+  color: $teal !important;
+}
+
+.deep-teal-bg {
+  background-color: $deep-teal !important;
+}
+
+.deep-teal-text {
+  color: $deep-teal !important;
+}
+
+// Semantic color utility classes
+.primary-color {
+  color: $deep-teal !important;
+}
+
+.primary-bg {
+  background-color: $deep-teal !important;
+}
+
+.secondary-color {
+  color: $teal !important;
+}
+
+.secondary-bg {
+  background-color: $teal !important;
+}
+
+.accent-color {
+  color: $soft-blue !important;
+}
+
+.accent-bg {
+  background-color: $soft-blue !important;
+}
+
+.neutral-color {
+  color: $light-beige !important;
+}
+
+.neutral-bg {
+  background-color: $light-beige !important;
+}

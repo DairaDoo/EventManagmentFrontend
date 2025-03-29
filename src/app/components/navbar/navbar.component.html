@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary" class="navbar">
+  <div class="navbar__title">
+    <a routerLink="/" class="navbar__title-link"><span> Event Managent Service</span></a>
+  </div>
+
+  <span class="spacer"></span> <!--space to seperate login and register buttons to the right-->
+
+
+  <div class="navbar__auth">
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-flat-button color="accent" routerLink="/register">Sign Up</button>
+  </div>
+
+</mat-toolbar>
