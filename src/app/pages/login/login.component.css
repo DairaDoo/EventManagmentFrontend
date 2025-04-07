@@ -35,23 +35,24 @@
 
 .login-card-wrapper {
   width: 100%;
-  max-width: 500px; /* Increased from default */
+  max-width: 420px; /* Increased from default */
   position: relative;
   z-index: 1;
   animation: fadeIn 0.5s ease-in-out;
+  padding: 16px;
 }
 
 
 .login-card {
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   transform: scale(1.05); /* Make card slightly larger */
 }
 
 mat-card-header {
   background-color: #F2EFE7;
-  padding: 32px 24px 8px; /* Increased top padding */
+  padding: 24px 16px 8px; /* Increased top padding */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -61,15 +62,15 @@ mat-card-header {
 mat-card-title h1 {
   margin: 0;
   color: #006A71;
-  font-size: 32px; /* Increased font size */
+  font-size: 28px; /* Increased font size */
   font-weight: 600; /* Slightly bolder */
   letter-spacing: 0.5px;
 }
 
 mat-card-subtitle {
-  margin-top: 10px;
+  margin-top: 6px;
   color: #666;
-  font-size: 18px; /* Increased font size */
+  font-size: 16px; /* Increased font size */
 }
 
 mat-card-content {
@@ -79,8 +80,8 @@ mat-card-content {
 .form-field-container {
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Increased gap between form fields */
-  margin-bottom: 32px; /* Increased bottom margin */
+  gap: 20px; /* Increased gap between form fields */
+  margin-bottom: 24px; /* Increased bottom margin */
 }
 
 .full-width {

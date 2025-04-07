@@ -1,0 +1,157 @@
+/* Container layout */
+.register-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .register-card {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 106, 113, 0.1) !important;
+    overflow: hidden;
+  }
+
+  /* Card header */
+  .card-header {
+    padding: 16px 24px;
+    background-color: #F2EFE7;
+    border-bottom: 2px solid #9ACBD0;
+  }
+
+  .card-header .mat-card-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* Spinner */
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  /* Table styles */
+  .table-container {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .registrations-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .header-row {
+    background-color: #F2EFE7;
+  }
+
+  .header-cell {
+    color: #006A71 !important;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px !important;
+  }
+
+  .data-row {
+    transition: background-color 0.2s ease;
+  }
+
+  .data-row:hover {
+    background-color: rgba(154, 203, 208, 0.1) !important;
+  }
+
+  .data-cell {
+    font-size: 14px;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Status badge */
+  .status-badge {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .status-pending {
+    background-color: rgba(154, 203, 208, 0.2);
+    color: #006A71;
+  }
+
+  .status-confirmed {
+    background-color: rgba(72, 166, 167, 0.2);
+    color: #006A71;
+  }
+
+  .status-canceled {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #d32f2f;
+  }
+
+  .status-completed {
+    background-color: rgba(0, 106, 113, 0.1);
+    color: #006A71;
+  }
+
+  /* Empty state */
+  .empty-state {
+    padding: 48px 16px;
+  }
+
+  .empty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .empty-icon {
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+    margin-bottom: 16px;
+  }
+
+  .empty-text {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-header .mat-card-title {
+      font-size: 20px;
+    }
+
+    .header-cell {
+      font-size: 13px;
+      padding: 12px 8px !important;
+    }
+
+    .data-cell {
+      font-size: 13px;
+      padding: 10px 8px !important;
+    }
+
+    .status-badge {
+      padding: 4px 8px;
+      font-size: 11px;
+    }
+  }
