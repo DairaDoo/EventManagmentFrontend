@@ -4,10 +4,10 @@
 
 // Custom color palette
 $event-palette: (
-  light-beige: #F2EFE7,
-  soft-blue: #9ACBD0,
-  teal: #48A6A7,
-  deep-teal: #006A71,
+  light-beige: #f2efe7,
+  soft-blue: #9acbd0,
+  teal: #48a6a7,
+  deep-teal: #006a71,
 );
 
 // Define the color variables
@@ -39,7 +39,7 @@ $primary-palette: (
     700: white,
     800: white,
     900: white,
-  )
+  ),
 );
 
 // Define the accent palette
@@ -65,7 +65,7 @@ $accent-palette: (
     700: white,
     800: white,
     900: white,
-  )
+  ),
 );
 
 // Define the warn palette
@@ -76,15 +76,17 @@ $primary: mat.define-palette($primary-palette);
 $accent: mat.define-palette($accent-palette);
 $warn: mat.define-palette($warn-palette);
 
-$theme: mat.define-light-theme((
-  color: (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
-));
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
 
 @include mat.all-component-themes($theme);
 

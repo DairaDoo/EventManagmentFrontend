@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { Router, RouterModule } from '@angular/router'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HttpErrorResponse } from '@angular/common/http'
 import { CommonModule } from '@angular/common'
 
 // Angular Material Imports
@@ -30,7 +30,7 @@ import { AuthService } from '../../services/auth.service'
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
   initForm(): void {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     })
   }
 
@@ -67,31 +67,39 @@ export class LoginComponent implements OnInit {
 
     const loginData = {
       username: this.loginForm.value.username,
-      password: this.loginForm.value.password
+      password: this.loginForm.value.password,
     }
 
-    this.authService.login(loginData)
-      .subscribe({
-        next: (response) => {
-          // Show success message
-          this.snackBar.open('Login successful!', 'Close', {
-            duration: 3000,
-            panelClass: 'success-snackbar'
-          })
+    // In login.component.ts - fix the response unused variable
+    this.authService.login(loginData).subscribe({
+      next: () => {
+        // Remove the 'response' parameter since it's not used
+        // Show success message
+        this.snackBar.open('Login successful!', 'Close', {
+          duration: 3000,
+          panelClass: 'success-snackbar',
+        })
 
-          // Navigate to home page
-          this.router.navigate(['/'])
-          this.isLoading = false
-        },
-        error: (error: any) => {
-          // Show error message
-          this.snackBar.open(error.error?.message || 'Login failed. Please try again.', 'Close', {
+        // Navigate to home page
+        this.router.navigate(['/'])
+        this.isLoading = false
+      },
+      error: (error: Error) => {
+        // Replace 'any' with a specific type
+        // Show error message
+        this.snackBar.open(
+          error instanceof HttpErrorResponse && error.error?.message
+            ? error.error.message
+            : 'Login failed. Please try again.',
+          'Close',
+          {
             duration: 5000,
-            panelClass: 'error-snackbar'
-          })
-          this.isLoading = false
-        }
-      })
+            panelClass: 'error-snackbar',
+          },
+        )
+        this.isLoading = false
+      },
+    })
   }
 
   getErrorMessage(controlName: string): string {

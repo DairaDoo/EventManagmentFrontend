@@ -8,10 +8,10 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [() => authGuard()]
+    canActivate: [() => authGuard()],
   },
   { path: 'login', component: LoginComponent },
-  {path: 'register', component: RegisterComponent},
+  { path: 'register', component: RegisterComponent },
   // Redirect any unknown paths to home
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ]

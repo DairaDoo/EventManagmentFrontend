@@ -14,7 +14,7 @@ interface LoginRequest {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private readonly TOKEN_KEY = 'auth_token'
@@ -25,7 +25,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    @Inject(API_BASE_URL) private apiBaseUrl: string
+    @Inject(API_BASE_URL) private apiBaseUrl: string,
   ) {}
 
   login(loginData: LoginRequest): Observable<LoginResponse> {
@@ -33,7 +33,7 @@ export class AuthService {
       tap(response => {
         this.setToken(response.Token)
         this.isAuthenticatedSubject.next(true)
-      })
+      }),
     )
   }
 

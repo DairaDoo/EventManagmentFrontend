@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { MatButtonModule } from '@angular/material/button'
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { NavbarComponent } from "./components/navbar/navbar.component";
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { NavbarComponent } from './components/navbar/navbar.component'
 
 @Component({
   selector: 'app-root',

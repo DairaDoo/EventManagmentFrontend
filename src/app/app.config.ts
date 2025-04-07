@@ -14,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    apiBaseUrlProvider
+    apiBaseUrlProvider,
   ],
 }
