@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {path: 'signUp', component: SignUpComponent},
+  { path: 'signUp', component: SignUpComponent },
   // Redirect any unknown paths to home
   { path: '**', redirectTo: '' },
 ]

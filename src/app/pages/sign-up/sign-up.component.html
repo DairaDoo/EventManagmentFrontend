@@ -1,49 +1,62 @@
 <div class="signup-container">
-    <h2 class="title">Crear cuenta</h2>
+  <h2 class="title">Crear cuenta</h2>
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
-      <mat-form-field appearance="outline" class="full-width" color="accent">
-        <mat-label>Nombre</mat-label>
-        <mat-icon matPrefix>badge</mat-icon>
-        <input matInput formControlName="firstName" placeholder="Ingresa tu nombre" />
-      </mat-form-field>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <mat-form-field appearance="outline" class="full-width" color="accent">
+      <mat-label>Nombre</mat-label>
+      <mat-icon matPrefix>badge</mat-icon>
+      <input matInput formControlName="firstName" placeholder="Ingresa tu nombre" />
+    </mat-form-field>
 
-      <mat-form-field appearance="outline" class="full-width" color="accent">
-        <mat-label>Apellido</mat-label>
-        <mat-icon matPrefix>badge</mat-icon>
-        <input matInput formControlName="lastName" placeholder="Ingresa tu apellido" />
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" color="accent">
+      <mat-label>Apellido</mat-label>
+      <mat-icon matPrefix>badge</mat-icon>
+      <input matInput formControlName="lastName" placeholder="Ingresa tu apellido" />
+    </mat-form-field>
 
-      <mat-form-field appearance="outline" class="full-width" color="accent">
-        <mat-label>Nombre de usuario</mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input matInput formControlName="username" placeholder="Tu nombre de usuario único" autocomplete="username"/>
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" color="accent">
+      <mat-label>Nombre de usuario</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input
+        matInput
+        formControlName="username"
+        placeholder="Tu nombre de usuario único"
+        autocomplete="username"
+      />
+    </mat-form-field>
 
-      <mat-form-field appearance="outline" class="full-width" color="accent">
-        <mat-label>Correo electrónico</mat-label>
-        <mat-icon matPrefix>email</mat-icon>
-        <input matInput type="email" formControlName="email" placeholder="ejemplo@correo.com" autocomplete="email"/>
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" color="accent">
+      <mat-label>Correo electrónico</mat-label>
+      <mat-icon matPrefix>email</mat-icon>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        placeholder="ejemplo@correo.com"
+        autocomplete="email"
+      />
+    </mat-form-field>
 
-      <mat-form-field appearance="outline" class="full-width" color="accent">
-        <mat-label>Contraseña</mat-label>
-        <mat-icon matPrefix>lock</mat-icon>
-        <input matInput
-               type="password"
-               formControlName="passwordHash"
-               placeholder="Mínimo 6 caracteres"
-               autocomplete="new-password" />
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" color="accent">
+      <mat-label>Contraseña</mat-label>
+      <mat-icon matPrefix>lock</mat-icon>
+      <input
+        matInput
+        type="password"
+        formControlName="passwordHash"
+        placeholder="Mínimo 6 caracteres"
+        autocomplete="new-password"
+      />
+    </mat-form-field>
 
-      <button mat-raised-button color="primary" class="submit-button" [disabled]="signupForm.invalid">
-        <mat-icon>check_circle</mat-icon>
-        Registrarse
-      </button>
-    </form>
+    <button mat-raised-button color="primary" class="submit-button" [disabled]="signupForm.invalid">
+      <mat-icon>check_circle</mat-icon>
+      Registrarse
+    </button>
+  </form>
 
-    <p class="login-link">
-      ¿Ya tienes una cuenta?
-      <a routerLink="/login">Inicia sesión aquí</a>
-    </p>
-  </div>
+  <p class="login-link">
+    ¿Ya tienes una cuenta?
+    <a routerLink="/login">Inicia sesión aquí</a>
+  </p>
+</div>

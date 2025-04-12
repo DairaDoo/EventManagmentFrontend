@@ -21,7 +21,7 @@ import { MatIconModule } from '@angular/material/icon'
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
@@ -42,7 +42,9 @@ export class SignUpComponent {
 
   onSubmit(): void {
     if (this.signupForm.invalid) {
-      this.snackBar.open('Por favor completa todos los campos correctamente.', 'Cerrar', { duration: 3000 })
+      this.snackBar.open('Por favor completa todos los campos correctamente.', 'Cerrar', {
+        duration: 3000,
+      })
       return
     }
 
@@ -54,16 +56,17 @@ export class SignUpComponent {
       email: this.signupForm.get('email')?.value ?? '',
       passwordHash: this.signupForm.get('passwordHash')?.value ?? '',
       role: 'User', // puedes enviar un rol por defecto o dejarlo opcional
-    };
-
+    }
 
     this.userService.registerUser(newUser).subscribe({
       next: () => {
         this.snackBar.open('Registro exitoso', 'Cerrar', { duration: 3000 })
         this.router.navigate(['/login'])
       },
-      error: (error) => {
-        this.snackBar.open('Error en el registro. Intenta nuevamente.', 'Cerrar', { duration: 3000 })
+      error: error => {
+        this.snackBar.open('Error en el registro. Intenta nuevamente.', 'Cerrar', {
+          duration: 3000,
+        })
         console.error('Error:', error)
       },
     })
