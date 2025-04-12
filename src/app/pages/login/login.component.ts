@@ -15,7 +15,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'
 
 // Services
 import { AuthService } from '../../services/auth.service'
-
+  
 @Component({
   selector: 'app-login',
   standalone: true,
